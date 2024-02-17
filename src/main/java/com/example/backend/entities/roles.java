@@ -1,7 +1,7 @@
 package com.example.backend.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
