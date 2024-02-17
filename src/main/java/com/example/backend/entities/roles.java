@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "rol"})})
+@Table(name = "roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "rol"})})
 public class roles implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

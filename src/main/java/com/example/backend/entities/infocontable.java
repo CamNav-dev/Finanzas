@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Info Contable")
+@Table(name = "info_contable")
 public class infocontable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
