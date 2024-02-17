@@ -1,12 +1,13 @@
 package com.example.backend.repositories;
 
 import com.example.backend.entities.usuarios;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-public interface UsuariosRepository{
+public interface UsuariosRepository extends JpaRepository<usuarios, Long> {
     public usuarios findByUsername(String username);
 
     //BUSCAR POR NOMBRE

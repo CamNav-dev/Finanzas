@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class JwtUserDetailsService implements UserDetailsService{
     @Autowired
-    private UsuariosRepository repo;
+    private UsuariosRepository myRepo;
 
     /*@Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -31,7 +31,7 @@ public class JwtUserDetailsService implements UserDetailsService{
     }*/
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        usuarios user = repo.findByUsername(username);
+        usuarios user = myRepo.findByUsername(username);
 
         if(user == null) {
             throw new UsernameNotFoundException(String.format("User not exists", username));
