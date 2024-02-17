@@ -1,34 +1,13 @@
-package com.example.backend.entities;
-
-import javax.persistence.*;
+package com.example.backend.dtos;
+import com.example.backend.entities.usuarios;
 import java.util.Date;
 
-@Entity
-@Table(name = "Historial")
-public class historial {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class HistorialDTO {
     private Long idHistorial;
-    @Column(name = "Usuario", nullable = false)
     private String tipo;
-    @Column(name = "monto", nullable = false)
     private double monto;
-    @Column(name = "fecha", nullable = false)
     private Date fecha;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
     private usuarios usuarios;
-
-    public historial() {
-    }
-
-    public historial(Long idHistorial, String tipo, double monto, Date fecha, com.example.backend.entities.usuarios usuarios) {
-        this.idHistorial = idHistorial;
-        this.tipo = tipo;
-        this.monto = monto;
-        this.fecha = fecha;
-        this.usuarios = usuarios;
-    }
 
     public Long getIdHistorial() {
         return idHistorial;
