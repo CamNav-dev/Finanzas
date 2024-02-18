@@ -11,12 +11,14 @@ public class usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "Usuario", nullable = false)
+    @Column(name = "usuario", nullable = false)
     private String username;
-    @Column(name = "Contraseña", nullable = false)
+    @Column(name = "contraseña", nullable = false)
     private String password;
-    @Column(name = "Correo", nullable = false)
+    @Column(name = "correo", nullable = false)
     private String email;
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
     private Boolean enabled;
 
     @JsonManagedReference
@@ -73,5 +75,13 @@ public class usuarios {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
