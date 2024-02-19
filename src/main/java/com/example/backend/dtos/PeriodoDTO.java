@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.util.Date;
+import com.example.backend.entities.cuenta;
 
 public class PeriodoDTO {
     private Long id_periodo;
@@ -12,7 +13,7 @@ public class PeriodoDTO {
     private double valorP;
     private double valorF;
     private double tazaEfectivaDiaria;
-    private Cuenta cuenta;
+    private cuenta cuenta;
 
     public Long getId_periodo() {
         return id_periodo;
@@ -62,11 +63,11 @@ public class PeriodoDTO {
         this.tazaEfectivaDiaria = tazaEfectivaDiaria;
     }
 
-    public Cuenta getCuenta() {
+    public cuenta getCuenta() {
         return cuenta;
     }
 
-    public void setCuenta(Cuenta cuenta) {
+    public void setCuenta(cuenta cuenta) {
         this.cuenta = cuenta;
     }
 }

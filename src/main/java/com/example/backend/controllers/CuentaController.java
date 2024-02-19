@@ -1,6 +1,7 @@
 package com.example.backend.controllers;
 
 
+import com.example.backend.dtos.PeriodoDTO;
 import com.example.backend.dtos.cuentaDTO;
 import com.example.backend.entities.cuenta;
 import com.example.backend.serviceimplements.CuentaServiceImplements;
@@ -41,6 +42,12 @@ public class CuentaController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public cuentaDTO listarId(@PathVariable("id")Long id){
+        ModelMapper m = new ModelMapper();
+        cuentaDTO myItem = m.map(myService.listId(id), cuentaDTO.class);
+        return myItem;
+    }
 
 
 

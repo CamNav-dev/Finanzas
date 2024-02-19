@@ -21,12 +21,12 @@ public class periodo {
     private double tazaEfectivaDiaria;
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Cuenta cuenta;
+    private cuenta cuenta;
 
     public periodo() {
     }
 
-    public periodo(Long id_periodo, Date fechaInicio, Date fechaFin, double valorP, double valorF, double tazaEfectivaDiaria, Cuenta cuenta) {
+    public periodo(Long id_periodo, Date fechaInicio, Date fechaFin, double valorP, double valorF, double tazaEfectivaDiaria, cuenta cuenta) {
         this.id_periodo = id_periodo;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;

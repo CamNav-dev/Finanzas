@@ -2,12 +2,12 @@ package com.example.backend.dtos;
 
 
 import java.util.Date;
-
+import com.example.backend.entities.usuarios;
 public class cuentaDTO {
     private Long id_cuenta;
 
     private String moneda;
-    //private usuarios usuarios;
+    private usuarios usuarios;
 
     public Long getId_cuenta() {
         return id_cuenta;
@@ -25,5 +25,11 @@ public class cuentaDTO {
         this.moneda=moneda;
     }
 
+    public com.example.backend.entities.usuarios getUsuarios() {
+        return usuarios;
+    }
 
+    public void setUsuarios(com.example.backend.entities.usuarios usuarios) {
+        this.usuarios = usuarios;
+    }
 }

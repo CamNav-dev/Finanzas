@@ -1,26 +1,27 @@
 package com.example.backend.controllers;
 
-import com.example.backend.dtos.PeriodoDTO;
-import com.example.backend.serviceimplements.PeriodoServiceImplements;
+import com.example.backend.serviceimplements.UsuariosServiceImplements;
+import com.example.backend.serviceinterfaces.UsuarioService;
+import com.example.backend.entities.usuarios;
+import com.example.backend.dtos.usuarioDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.backend.entities.periodo;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/periodo")
-public class PeriodoController {
+@RequestMapping("/usuario")
+public class UsuarioController {
     @Autowired
-    private PeriodoServiceImplements myService;
+    private UsuarioService myService;
 
     @PostMapping
-    public void registrar(@RequestBody PeriodoDTO dto) {
+    public void registrar(@RequestBody usuarioDTO dto) {
         ModelMapper m = new ModelMapper();
-        periodo myItem = m.map(dto, periodo.class);
+        usuarios myItem = m.map(dto, usuarios.class);
         myService.insert(myItem);
     }
 
@@ -32,26 +33,26 @@ public class PeriodoController {
 
     // Retrieve an items by ID from table
     @GetMapping("/{id}")
-    public PeriodoDTO listarId(@PathVariable("id")Long id){
+    public usuarioDTO listarId(@PathVariable("id")Long id){
         ModelMapper m = new ModelMapper();
-        PeriodoDTO myItem = m.map(myService.listId(id), PeriodoDTO.class);
+        usuarioDTO myItem = m.map(myService.listId(id), usuarioDTO.class);
         return myItem;
     }
 
     // Retrieve all items from table
     @GetMapping
-    public List<PeriodoDTO> listar(){
+    public List<usuarioDTO> listar(){
         return myService.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
-            return m.map(x, PeriodoDTO.class);
+            return m.map(x, usuarioDTO.class);
         }).collect(Collectors.toList());
     }
 
     // (Exclusive to controller) Modify values on table
     @PutMapping
-    public void modificar(@RequestBody PeriodoDTO dto) {
+    public void modificar(@RequestBody usuarioDTO dto) {
         ModelMapper m = new ModelMapper();
-        periodo d = m.map(dto, periodo.class);
+        usuarios d = m.map(dto, usuarios.class);
         myService.insert(d);
     }
 }
